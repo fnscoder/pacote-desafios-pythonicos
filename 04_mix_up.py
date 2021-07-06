@@ -14,7 +14,10 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    resp = 'error, less than 2 chars'
+    if len(a) >= 2 and len(b) >= 2:
+        resp = ' '.join((b[:2] + a[2:], a[:2] + b[2:]))
+    return resp
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -42,3 +45,4 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
+    test(mix_up, ('p', 'f'), 'error, less than 2 chars')
